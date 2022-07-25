@@ -20,10 +20,10 @@
             </ul>
             <ul class="public_nav-search">
                 <li>
-                    <input type="text" placeholder="rechercher un restaurent"/>
+                    <router-link to="/login">login</router-link>
                 </li>
                 <li>
-                    <router-link to="/login">login</router-link>
+                    <router-link to="/signup">Sign up</router-link>
                 </li>
             </ul>
         </nav>

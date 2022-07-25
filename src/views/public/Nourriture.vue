@@ -1,6 +1,6 @@
 <template lang="">
     <div>
-        Nouriture wzorks !
+        
     </div>
 </template>
 <script>
