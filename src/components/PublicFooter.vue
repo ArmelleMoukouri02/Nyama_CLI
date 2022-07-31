@@ -1,6 +1,6 @@
 <template>
   
-    <footer class="section footer">
+    <footer class="section footer d-none">
             <div class="footer-container container">
                     <div class="footer-content">
                         <a href="#" class="logo-content flex">
