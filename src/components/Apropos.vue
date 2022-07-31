@@ -4,7 +4,7 @@
         >
             <img class="col-4" src="../assets/nyama_image/slide1.webp" alt="" 
             data-aos="fade-up"/>
-            <div class="col-5">
+            <div class="col-5" data-aos="zoom-out-down">
                 <h2>Apropos de Nous</h2>
                 <p>
                     Nyama vous met en relation avec les meilleurs 
@@ -24,5 +24,8 @@ export default {
     .btn-eat{
         background-color: #e6571ef1;
         color: #fff;
+    }
+    .slide{
+        padding: 6rem 0;
     }
 </style>

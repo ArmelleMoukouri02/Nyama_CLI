@@ -4,21 +4,24 @@
             <h2 class="py-2">Nos incroyables services</h2>
             <p class="py-2">Bénéficiez d'une remise de 40% sur votre prochain festin en regardant cette vidéo</p>
             <div class="d-md-flex my-md-0 my-5">
-                <div class="service_content-card border-bottom border-md-0 py-2">
+                <div class="service_content-card border-bottom border-md-0 py-2"
+                data-aos="fade-right" data-aos-duration="1000">
                     <div><img src="../../assets/nyama_image/service-icon-1_300x300.webp" alt="" /></div><br />
                     <h3>Restaurants de qualité</h3>
                     <p>
                         Qectus urna duis convallis convallis tellus id. Nisl tincidunt eget nullam non nisie
                     </p>
                 </div>
-                <div class="service_content-card border-bottom py-2">
+                <div class="service_content-card border-bottom py-2"
+                data-aos="zoom-in" data-aos-duration="2000">
                     <div><img src="../../assets/nyama_image/service-icon-2_300x300.webp" alt="" /></div><br />
                     <h3>Nourriture de qualité</h3>
                     <p>
                         Onterdum velit euismod in pellentesque massa placerat duis ultricies nec ullamc
                     </p>
                 </div>
-                <div class="service_content-card border-bottom py-2">
+                <div class="service_content-card border-bottom py-2"
+                data-aos="fade-left" data-aos-duration="3000">
                     <div><img src="../../assets/nyama_image/service-icon-3.webp" alt="" /></div><br />
                     <h3>Livraison rapide</h3>
                     <p>

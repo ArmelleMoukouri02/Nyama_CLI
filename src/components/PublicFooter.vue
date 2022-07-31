@@ -1,52 +1,150 @@
 <template>
   
-    <footer class="section footer d-none">
-            <div class="footer-container container">
-                    <div class="footer-content">
-                        <a href="#" class="logo-content flex">
-                                <i class='bx bx-coffee logo-icon'></i>
-                                <span class="logo-text">Nyama</span>
-                            </a>
+    <!-- Remove the container if you want to extend the Footer to full width. -->
+<div class="">
 
-                            <p class="content-description">Nyama est là pour vous aider</p>
+  <!-- Footer -->
+  <footer
+          class="text-center text-lg-start text-white"
+          style="background-color: #1c2331"
+          >
+    <!-- Section: Social media -->
+    <section
+             class="d-flex justify-content-between p-4 d-link"
+             >
+      <!-- Left -->
+      <div class="me-5">
+        <span>Get connected with us on social networks:</span>
+      </div>
+      <!-- Left -->
 
-                            <div class="footer-location flex">
-                                <i class='bx bx-map map-icon'></i>
-                                
-                                <div class="location-text">
-                                        Douala, Cameroun Bonamoussadi Carrefour le Kostit
-                                </div>
-                            </div>
-                    </div>
+      <!-- Right -->
+      <div>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-google"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
 
-                    <div class="footer-linkContent">
-                            <ul class="footer-links">
-                                    <h4 class="footerLinks-title">Facility</h4>
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-start mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold">Company name</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p>
+              Here you can use rows and columns to organize your footer
+              content. Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit.
+            </p>
+          </div>
+          <!-- Grid column -->
 
-                                    <li><a href="#" class="footer-link">Commander</a></li>
-                                    <li><a href="#" class="footer-link">Livraison</a></li>
-                                    <li><a href="#" class="footer-link">Super marché</a></li>
-                                    <li><a href="#" class="footer-link">Restaurants</a></li>
-                            </ul>
-                            <ul class="footer-links">
-                                    <h4 class="footerLinks-title">Facility</h4>
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Products</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p>
+              <a href="#!" class="text-white">MDBootstrap</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">MDWordPress</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">BrandFlow</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Bootstrap Angular</a>
+            </p>
+          </div>
+          <!-- Grid column -->
 
-                                    <li><a href="#" class="footer-link">Coffee</a></li>
-                                    <li><a href="#" class="footer-link">Beverages</a></li>
-                                    <li><a href="#" class="footer-link">Dishes</a></li>
-                            </ul>
-                            <ul class="footer-links">
-                                    <h4 class="footerLinks-title">Support</h4>
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Useful links</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p>
+              <a href="#!" class="text-white">Your Account</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Become an Affiliate</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Shipping Rates</a>
+            </p>
+            <p>
+              <a href="#!" class="text-white">Help</a>
+            </p>
+          </div>
+          <!-- Grid column -->
 
-                                    <li><a href="#" class="footer-link">About Us</a></li>
-                                    <li><a href="#" class="footer-link">FAQs</a></li>
-                                    <li><a href="#" class="footer-link">Private Policy</a></li>
-                                    <li><a href="#" class="footer-link">Help Us</a></li>
-                            </ul>
-                    </div>
-            </div>
-            <div class="footer-copyRight">&#169; AFARIK All rigths reserved</div>
-        </footer>
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">Contact</h6>
+            <hr
+                class="mb-4 mt-0 d-inline-block mx-auto"
+                style="width: 60px; background-color: #7c4dff; height: 2px"
+                />
+            <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
+            <p><i class="fas fa-envelope mr-3"></i> info@example.com</p>
+            <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
+            <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div
+         class="text-center p-3"
+         style="background-color: rgba(0, 0, 0, 0.2)"
+         >
+      © 2020 Copyright:
+      <a class="text-white" href="https://mdbootstrap.com/"
+         >MDBootstrap.com</a
+        >
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+
+</div>
 
 </template>
 
@@ -57,74 +155,8 @@ export default {
 </script>
 
 <style>
-
-    /* Footer */
-.footer{
-  padding: 4rem 2rem 3rem;
-  background-color: #2C3034;
-;
-}
-.footer .content-description,
-.footer .map-icon,
-.footer .location-text{
-  color: #888682;
-}
-.footer-container{
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  column-gap: 2rem;
-  align-items: center;
-}
-.footer-content{
-  display: grid;
-  row-gap: 3rem;
-}
-.footer .logo-text,
-.footer .logo-icon{
-  color: #888682;
-  font-size: 2rem;
-  font-weight: 500;
-}
-.footer .logo-icon{
-  font-size: 3rem;
-}
-.footer .content-description,
-.footer .location-text{
-  text-align: left;
-  font-size: 1.4rem;
-}
-.footer .map-icon{
-  font-size: 3rem;
-  margin-right: 1rem;
-}
-.footer-linkContent{
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  justify-items: end;
-}
-.footer-links{
-  display: grid;
-  row-gap: 1rem;
-  font-weight: 500;
-  color: #FFF;
-}
-.footer-link{
-  font-size: 1.4rem;
-  color: rgba(255, 255, 255, 0.5);
-  transition: 0.3s;
-}
-.footer-link:hover{
-  color: rgba(255, 255, 255, 0.8);
-}
-.footer-copyRight{
-  max-width: 970px;
-  margin: 0 auto;
-  text-align: center;
-  padding-top: 3rem;
-  margin-top: 3rem;
-  font-size: 1.4rem;
-  border-top: 2px solid #888682;
-  color: rgba(255, 255, 255, 0.8);;
-}
+  .d-link{
+    background-color: #e6571ef1;
+  }
 
 </style>

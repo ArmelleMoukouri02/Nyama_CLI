@@ -4,8 +4,8 @@
         <img class="d-none d-md-block" src="../assets/nyama_image/slider.webp" alt="" />
         <div class="header_text">
             <div class="text-center">
-                <h2>Bienvenue sur votre catalogue de restaurants</h2>
-                <h3>Faite vous livrer partous</h3>
+                <h2 class="my-4">Bienvenue sur votre catalogue de restaurants</h2>
+                <h3 class="my-2">Faite vous livrer partous</h3>
                 <p>Nyama est votre plateforme vous permettant de trouver des restaurants plus proches de vous et passer des commandes</p>
             </div>
             <div class="row px-4">
@@ -75,7 +75,7 @@ export default {
             margin: 0;
             left: 8%;
             right: 0;
-            top: 12%;
+            top: 20%;
             width: 40%;
         }
         .header{
