@@ -1,10 +1,10 @@
 <template lang="">
     <div class="slide my-5 text-center container">
-        <div class="d-flex justify-content-center align-items-center my-4"
+        <div class="d-md-flex justify-content-center align-items-center my-4"
         >
-            <img class="col-4" src="../assets/nyama_image/slide1.webp" alt="" 
+            <img class="col-5 col-md-4" src="../assets/nyama_image/slide1.webp" alt="" 
             data-aos="fade-up"/>
-            <div class="col-5" data-aos="zoom-out-down">
+            <div class="col-md-5" data-aos="zoom-out-down">
                 <h2>Apropos de Nous</h2>
                 <p>
                     Nyama vous met en relation avec les meilleurs 
@@ -26,6 +26,12 @@ export default {
         color: #fff;
     }
     .slide{
-        padding: 6rem 0;
+        padding: 2rem 0;
+        overflow-x: hidden;
+    }
+    @media screen and(min-width: 760px) {
+        .slide{
+            padding: 6rem 0;
+        }
     }
 </style>

@@ -33,6 +33,9 @@
                 </div>
             </div>
         </div>
+        <div class="text-center">
+            <button class="btn">Voir +</button>
+        </div>
     </div>
 </template>
 <script>
@@ -82,7 +85,7 @@ export default {
         cursor: pointer;
     }
     .container-map{
-        z-index: 10;
+        z-index: 80;
         height: 100vh;
         position: fixed;
         width: 100%;

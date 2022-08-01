@@ -13,7 +13,7 @@ const routes = [
     children: [
       { path: '/', name: 'home', component: Home },
       { path: '/restaurant', name: 'restaurant', component: Resto },
-      { path: '/nourritures', name: 'nourritures', component: Nourriture },
+      { path: '/nourriture', name: 'nourriture', component: Nourriture },
     ]
   }
 
@@ -21,7 +21,9 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
+  routes,
+  linkActiveClass: 'active',
+  linkExactActiveClass: 'exact'
 })
 
 export default router

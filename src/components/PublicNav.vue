@@ -1,5 +1,5 @@
 <template lang="">
-    <div class="public_nav shadow-md-md position-static">
+    <div class="public_nav shadow-md-md w-md-100">
         <nav class="public_nav_content">
             <div class="public_nav-logo d-flex justify-content-between">
                 <h2>Nyama</h2>
@@ -9,7 +9,7 @@
                     </svg>
                 </div>
             </div>
-            <div class="public_nav-transitio" v-if="OpenNav">
+            <div class="public_nav-transitio d-none d-md-flex">
                 <ul class="public_nav-link">
                     <li>
                         <router-link to="/">Accueil</router-link>
@@ -24,12 +24,30 @@
                         <router-link to="/apropos">Apropos</router-link>
                     </li>
                 </ul>
-                <ul class="public_nav-search">
+                <ul class="public_nav-search mx-3">
                     <li>
                         <router-link to="/login">login</router-link>
                     </li>
-                    <li>
-                        <router-link to="/signup">Sign up</router-link>
+                </ul>
+            </div>
+            <div class="public_nav-transitio d-md-none" v-if="OpenNav">
+                <ul class="public_nav-link">
+                    <li class="my-2">
+                        <router-link to="/">Accueil</router-link>
+                    </li>
+                    <li class="my-2">
+                        <router-link to="/restaurant">Restaurants</router-link>
+                    </li>
+                    <li class="my-2">
+                        <router-link to="/nourriture">Nourritures</router-link>
+                    </li>
+                    <li class="my-2">
+                        <router-link to="/apropos">Apropos</router-link>
+                    </li>
+                </ul>
+                <ul class="public_nav-search">
+                    <li class="my-2">
+                        <router-link to="/login">login</router-link>
                     </li>
                 </ul>
             </div>
@@ -49,14 +67,15 @@ export default {
 <style scoped>
     .public_nav{
         /* height: 80vh; */
+        width: 100%;
+        position: fixed;
         padding: 12px 22px;
-        z-index: 2;
+        z-index: 20;
         background-color: #fff;
         -webkit-font-smoothing: antialiased;
         transform-origin: 0% 0%;
-        transform: translate(0%, 0);
-        transition: transform 1s cubic-bezier(0.77,0.2,0.05,1.0);
-        /* box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); */
+        transition: all .6s ease;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
     }
     .public_nav li{
         list-style: none;
@@ -65,9 +84,10 @@ export default {
     }
     .public_nav ul{
         padding: 0;
+        gap: 12px !important;
     }
     .svg{
-        width: 2.5rem;
+        width: 2rem;
     }
     svg{
         width: 100%;
@@ -78,13 +98,16 @@ export default {
         box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
         border-radius: .4rem;
         z-index: 10;
-        height: 100%;
         padding: 1rem 2rem;
         
     }
+    li a{
+        font-size: .9rem;
+        text-decoration: none;
+    }
     @media screen and (min-width: 768px){
         .public_nav{
-            height: 100%;
+            width: 100%;
             padding: 10px 22px;
         }
         .public_nav ul{

@@ -1,6 +1,6 @@
 <template lang="">
     <div class="">
-        
+        restaurants list
     </div>
 </template>
 <script>

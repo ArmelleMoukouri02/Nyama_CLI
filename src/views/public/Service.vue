@@ -39,6 +39,7 @@ export default {
 </script>
 <style scoped>
     .service{
+        overflow-x: hidden;
         padding: 5rem 0;
         background-color: #faf4ed;
     }
