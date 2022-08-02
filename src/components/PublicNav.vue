@@ -15,7 +15,7 @@
                         <router-link to="/">Accueil</router-link>
                     </li>
                     <li>
-                        <router-link to="/restaurant">Restaurants</router-link>
+                        <router-link to="/restaurants">Restaurants</router-link>
                     </li>
                     <li>
                         <router-link to="/nourritures">Nourritures</router-link>
@@ -36,7 +36,7 @@
                         <router-link to="/">Accueil</router-link>
                     </li>
                     <li class="my-2">
-                        <router-link to="/restaurant">Restaurants</router-link>
+                        <router-link to="/restaurants">Restaurants</router-link>
                     </li>
                     <li class="my-2">
                         <router-link to="/nourriture">Nourritures</router-link>
