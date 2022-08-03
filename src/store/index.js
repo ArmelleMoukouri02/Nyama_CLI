@@ -8,26 +8,26 @@ const store = createStore({
     currentResto: {},
     restos: [{
       id: 1,
-      title: "Arrietty : Le Petit Monde des Chapardeurs",
-      image: require('@/assets/nyama_image/arrietty.jpg'),
+      title: "Le Petit Monde des Chapardeurs",
+      image: require('@/assets/nyama_image/resto1.webp'),
       note: 3,
     },
     {
       id: 2,
       title: "Le Château Ambulant",
-      image: require('@/assets/nyama_image/chateau_ambulant.jpg'),
+      image: require('@/assets/nyama_image/resto2.webp'),
       note: 5,
     },
     {
       id: 3,
       title: "Le Voyage de Chihiro",
-      image: require('../assets/nyama_image/chihiro.jpg'),
+      image: require('../assets/nyama_image/resto3.webp'),
       note: 5,
     },
     {
       id: 4,
       title: "Kiki la Petite Sorcière",
-      image: require('@/assets/nyama_image/kiki.jpg'),
+      image: require('@/assets/nyama_image/Wings.webp'),
       note: 4,
     },{
       id: 5,
