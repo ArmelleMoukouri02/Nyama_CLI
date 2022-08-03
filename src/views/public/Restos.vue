@@ -3,8 +3,8 @@
         <HeaderResto />
         <div>
             <h1>restaurants list</h1>
-            <div class="restos row">
-                <router-link :to="{name: 'resto', params : { id : resto.id}}" class="card col-4 col-md" style="width: 18rem;"
+            <div class="restos row justify-content-center">
+                <router-link :to="{name: 'resto', params : { id : resto.id}}" class="card col-4 col-md-6" style="width: 18rem;"
                 v-for="(resto, idx) in restos" :key="idx">
                     <img :src="'' + resto.image + '/'" alt="" />
                         <div class="card-body">
@@ -37,6 +37,8 @@ export default {
     }
 }
 </script>
-<style lang="">
-    
+<style scoped>
+    .restos{
+        gap: 1rem;
+    }
 </style>
