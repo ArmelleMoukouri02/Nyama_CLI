@@ -8,10 +8,11 @@
     <h1 class="resto__title">{{resto.title}}</h1>
     <div class="resto__note">
       <span v-for="i in 5" :key="i" :class="{'resto__star': true, 'resto__star--dark' : i > resto.note}" @click="updateNote(i)">⭐</span>
-    </div>
-    hkkjhjkhk
-    <!-- <div v-for="(review, idx) in reviews" :key="idx">
-      <review :review="review"/>
+    </div><br />
+    
+    <h3>Liste de menu du restaurants {{resto.title}} proposees sont :</h3>
+    <!-- <div v-for="(menu, idx) in menu" :key="idx">
+      <menu :review="menu"/>
     </div> -->
   </div>
 </template>
