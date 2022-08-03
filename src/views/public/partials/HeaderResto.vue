@@ -2,11 +2,11 @@
     <div>
         <div class="header_resto py-5 py-md-0">
             <!-- <img src="" alt="" /> -->
-            <div class="header_resto-text">
-                <h2>Parcourer la lits de vos restaurants</h2>
+            <div class="header_resto-text" data-aos="zoom-out" data-aos-duration="2000">
+                <h2>Parcourir la lite de vos restaurants</h2>
                 <Multiselect class="col-md" v-model="value"
-                    :options="options" :custom-label="value"
-                    placeholder="Select one" label=""></Multiselect>
+                    :options="options" :label="value"
+                    placeholder="Select restaurants" label=""></Multiselect>
             </div>
         </div>
     </div>
