@@ -77,7 +77,10 @@
               <h5 class="card-title menu-title px-2 my-1">Pizza janbon gras</h5>
               <div class="d-flex justify-content-between align-items-center my- px-2">
                 <li class="menu-prix">2500fcfa</li>
-                <p class="menu-cart border rounded-circle p-2"><i class="fa-solid fa-cart-arrow-down"></i></p>
+                <button class="menu-cart border rounded-circle p-2"
+                type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                  <i class="fa-solid fa-cart-arrow-down"></i>
+                </button>
               </div>
             </div>
           </div>
@@ -87,6 +90,16 @@
     <!-- <div v-for="(menu, idx) in menu" :key="idx">
       <menu :review="menu"/>
     </div> -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header">
+        <h5 class="menu-title" id="offcanvasRightLabel">Votre Panier</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close">
+        </button>
+      </div>
+      <div class="offcanvas-body">
+        ...
+      </div>
+    </div>
   </div>
 </template>
 
