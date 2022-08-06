@@ -1,6 +1,6 @@
 <template lang="">
-    <div>
-        Restaurant works !
+    <div class="">
+        Restaurant works!
     </div>
 </template>
 <script>
