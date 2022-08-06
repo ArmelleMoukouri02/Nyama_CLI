@@ -1,24 +1,35 @@
 <template lang="">
     <div class="bg-red">
         <HeaderHome />
-        <div class="p-2">
+        <div class="p-2 container">
             <Choice class=""/>
             <Slide />
         </div>
+        <RestoSlide class="slideR"/>
+        <Service />
+        <NewLester />
     </div>
 </template>
 <script>
 import HeaderHome from '@/components/HeaderHome.vue';
 import Choice from './Choice.vue';
-import Slide from '@/components/Slide.vue';
+import RestoSlide from './RestoSlide.vue';
+import Slide from '@/components/Apropos.vue';
+import NewLester from '@/components/NewLester.vue';
+import Service from './Service.vue'
 export default {
     components: {
         HeaderHome,
         Choice,
         Slide,
+        RestoSlide,
+        NewLester,
+        Service,
     }
 }
 </script>
 <style scoped>
-    
+    .slideR{
+        background-color: #fffdfa !important;
+    }
 </style>
