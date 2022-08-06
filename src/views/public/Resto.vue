@@ -7,7 +7,7 @@
     </div>
     <router-link :to="{name :'home'}" class="resto__back">← Retour</router-link>
     <h1 class="resto__title">{{resto.title}}</h1>
-    <div class="d-flex justify-content-between
+    <div class="d-flex justify-content-md-center justify-content-between
                             slide-text my-2">
         <ul class="d-flex resto__note">
             <li v-for="i in 5" :key="i" :class="{'resto__star': true, 'resto__star--dark' : i > resto.note}"
@@ -17,7 +17,73 @@
         </ul>
         <span class="text-secondary">4.5/(473)</span>
       </div>
-    <h3>Liste de menu du restaurants {{resto.title}} proposees sont :</h3>
+    
+    <div class="containe row py-md-3">
+      <div class="menu_filter my-2 my-md-0 col-12 col-md">
+        <div class="card px-1">
+          <div class="card-body border-bottom">
+            <h5 class="card-title text-muted text-start py-2"><i class="fa-solid fa-list-check mx-1"></i>Filtrer par</h5>
+            <button class="btn border w-100 d-flex justify-content-between align-items-center">
+              <i class="fa-solid fa-circle-dot color-nyama"></i>
+              Menu restaurant
+            </button><br />
+            <button class="btn border w-100 d-flex justify-content-between align-items-center">
+              <i class="fa-solid fa-circle-dot text-muted"></i>
+              Bar restaurant
+            </button>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title text-start text-muted py-2"><i class="fa-solid fa-calendar-days mx-1"></i> Heure d'ouverture</h5>
+            <ul class="menu_filter-open">
+              <li class="d-flex justify-content-between align-items-center py-2 my-2">
+                <span>Lundi</span>
+                <span>09h - 22h</span>
+              </li>
+              <li class="d-flex justify-content-between align-items-center py-2 my-2">
+                <span>Mardi</span>
+                <span>09h - 22h</span>
+              </li>
+              <li class="d-flex justify-content-between align-items-center py-2 my-2">
+                <span>Mercredi</span>
+                <span>09h - 22h</span>
+              </li>
+              <li class="d-flex justify-content-between align-items-center py-2 my-2">
+                <span>Jeudi</span>
+                <span>10h30 - 22h</span>
+              </li>
+              <li class="d-flex justify-content-between align-items-center py-2 my-2">
+                <span>Vendredi</span>
+                <span>09h - 22h</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="menu_list col-12 col-md-9">
+        <div class="d-md-flex align-items-center border-bottom">
+          <h3><i class="fa-solid fa-clipboard-check mx-2"></i>Menu chez {{resto.title}} :</h3>
+          <div class="form-group my-3 m-auto d-flex justify-content-between align-items-center
+          border border-2 rounded px-2">
+            <input type="text" v-model="SearchKey"
+              class="form-control border-0" name="" id=""  placeholder="recherchez un restaurant">
+              <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+        </div>
+        <div class="py-4">
+          <div class="menu_list-card card border-0 mx-auto mx-md-0" style="width: 18rem;">
+            <div class="card-body menu_list-card-bg rounded rounded-md">
+            </div>
+            <div>
+              <h5 class="card-title menu-title px-2 my-1">Pizza janbon gras</h5>
+              <div class="d-flex justify-content-between align-items-center my- px-2">
+                <li class="menu-prix">2500fcfa</li>
+                <p class="menu-cart border rounded-circle p-2"><i class="fa-solid fa-cart-arrow-down"></i></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- <div v-for="(menu, idx) in menu" :key="idx">
       <menu :review="menu"/>
     </div> -->
@@ -142,6 +208,7 @@ export default {
     max-width: 400px;
     margin: 0 auto;
     padding:32px;
+    text-align: center;
   }
 
   .resto__back {
@@ -155,7 +222,7 @@ export default {
   .resto__img {
     max-width: 400px;
     height: 0;
-    padding-bottom: 154%;
+    padding-bottom: 150%;
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0 auto;
@@ -200,12 +267,6 @@ export default {
     text-shadow: none;
   }
 
-  .card{
-        transition:all .6s ease;
-    }
-    .card:hover{
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
-    }
     ul, h5{
         padding: 0;
         margin: 0;
@@ -218,9 +279,57 @@ export default {
     }
     .slide-text{
         font-size: .8rem;
+        gap: 1.5rem;
     }
     .slide-map{
         cursor: pointer;
     }
+    .color-nyama{
+      color: #e6571ef1;
+    }
 
+    .form-control:focus{
+      border: none !important;
+    }
+
+    .menu_filter-open li{
+      border-bottom: 1px dashed #aaa;
+    }
+
+    .menu_list-card-bg{
+      height: 10rem ;
+      background-image: url('../../assets/nyama_image/jakub-kapusnak-4f4YZfDMLeU-unsplash.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .menu-cart{
+      width: 2rem;
+      height: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .menu-title{
+      color: #e6571ef1;
+      font-family: 'Fraunces', serif;
+      text-align: left;
+    }
+
+    .menu-prix{
+      font-family: 'Fraunces', serif;
+    }
+
+@media screen and (min-width: 760px) {
+    .resto {
+    max-width: 100% !important;
+  }
+  .resto__img {
+    max-width: 400px;
+    padding-bottom: 44% !important;
+  }
+}
 </style>
