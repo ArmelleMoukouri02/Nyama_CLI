@@ -10,6 +10,15 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   </head>
   <body>
+    <style>
+      body::-webkit-scrollbar {
+        width: 8px;               /* width of the entire scrollbar */
+      }
+
+      body::-webkit-scrollbar-thumb {
+        background-color: #e6571ef1;    /* color of the scroll thumb */
+      }
+    </style>
     <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>

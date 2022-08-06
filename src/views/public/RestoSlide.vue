@@ -122,4 +122,5 @@ export default {
     .content_card{
         gap: .7rem;
     }
+    
 </style>
