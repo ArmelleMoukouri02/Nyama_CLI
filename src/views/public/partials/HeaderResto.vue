@@ -6,7 +6,7 @@
                 <h2>Parcourir la lite de vos restaurants</h2>
                 <Multiselect class="col-md" v-model="value"
                     :options="options" :label="value"
-                    placeholder="Select restaurants" label=""></Multiselect>
+                    placeholder="Select restaurants"></Multiselect>
             </div>
         </div>
     </div>
@@ -31,6 +31,9 @@ export default {
         rgba(34, 34, 36, 0.692)
       ),
     url('../../../assets/nyama_image/breadcrumb.webp');
+        background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
     img{
         width: 100%;

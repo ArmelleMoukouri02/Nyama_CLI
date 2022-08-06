@@ -1,15 +1,22 @@
 <template>
   <div class="resto" style="height: ;">
+
     <div class="resto__background" :style="{backgroundImage: 'url(\'' + resto.image + '\')'}"></div>
     <div class="resto__img">
             <img :src="'' + resto.image + '/'" alt="" />
     </div>
     <router-link :to="{name :'home'}" class="resto__back">← Retour</router-link>
     <h1 class="resto__title">{{resto.title}}</h1>
-    <div class="resto__note">
-      <span v-for="i in 5" :key="i" :class="{'resto__star': true, 'resto__star--dark' : i > resto.note}" @click="updateNote(i)">⭐</span>
-    </div><br />
-    
+    <div class="d-flex justify-content-between
+                            slide-text my-2">
+        <ul class="d-flex resto__note">
+            <li v-for="i in 5" :key="i" :class="{'resto__star': true, 'resto__star--dark' : i > resto.note}"
+                                      @click="updateNote(i)">
+                <i class="fa-solid fa-star"></i>
+            </li>
+        </ul>
+        <span class="text-secondary">4.5/(473)</span>
+      </div>
     <h3>Liste de menu du restaurants {{resto.title}} proposees sont :</h3>
     <!-- <div v-for="(menu, idx) in menu" :key="idx">
       <menu :review="menu"/>
@@ -192,5 +199,28 @@ export default {
     opacity:0.5;
     text-shadow: none;
   }
+
+  .card{
+        transition:all .6s ease;
+    }
+    .card:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    }
+    ul, h5{
+        padding: 0;
+        margin: 0;
+    }
+    li{
+        list-style: none;
+    }
+    li{
+        color: rgb(253, 173, 25);
+    }
+    .slide-text{
+        font-size: .8rem;
+    }
+    .slide-map{
+        cursor: pointer;
+    }
 
 </style>

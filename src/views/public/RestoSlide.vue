@@ -20,7 +20,7 @@
                         <span>Activer Maps </span>
                         <span class="text-secondary"><i class="fa-solid fa-map-location"></i></span>
                     </p>
-                    <button class="btn  w-100">Go somewhere</button>
+                    <button class="btn button w-100">Entrez</button>
                 </div>
             </div>
             <div class="container-map" v-if="mapsdialog" @click="closeMaps()">
@@ -34,7 +34,7 @@
             </div>
         </div>
         <div class="text-center">
-            <button class="btn">Voir +</button>
+            <router-link to="/restaurants" class="btn button">Voir +</router-link>
         </div>
     </div>
 </template>
@@ -111,11 +111,11 @@ export default {
         background: #fff;
         padding: 1rem;
     }
-    button{
+    .button{
         background: #e6571ef1;
         color: #fff;
     }
-    button:hover{
+    .button:hover{
         color: #fff;
     }
     .content_card{

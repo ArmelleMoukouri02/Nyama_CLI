@@ -16,4 +16,12 @@
   .page-width{
     gap: 1rem;
   }
+  .button{
+      background: #e6571ef1;
+      color: #fff;
+  }
+  a{
+    text-decoration: none;
+    color: #333;
+  }
 </style>
