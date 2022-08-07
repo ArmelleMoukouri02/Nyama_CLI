@@ -43,20 +43,20 @@ export default {
     background: #fff;
 }
 
-.subscription-wrapper {
+/* .subscription-wrapper {
     border-radius: 0% 5% 10% 3%/10% 20% 0% 17%;
     -webkit-transform: perspective(1800px) rotateY(20deg) skewY(1deg) translateX(50px);
     transform: perspective(1800px) rotateY(20deg) skewY(1deg) translateX(50px);
     padding: 70px 50px;
     z-index: 1;
     width: 100%;
-    /* background: linear-gradient(80deg, #0030cc 0%, #00a4db 100%); */
+    background: linear-gradient(80deg, #0030cc 0%, #00a4db 100%);
     
-}
+} */
 
-.subscription-wrapper {
+/* .subscription-wrapper {
     box-shadow: 0px 15px 39px 0px rgba(8, 18, 109, 0.1) !important;
-}
+} */
 
 .subscription-content {
     -webkit-transform: skewY(-1deg);

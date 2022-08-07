@@ -5,17 +5,21 @@
         <div class="header_text">
             <div class="text-center">
                 <h2 class="my-4">Bienvenue sur votre catalogue de restaurants</h2>
-                <h3 class="my-2">Faite vous livrer partous</h3>
+                <h3 class="my-2">Faite vous livrer partout</h3>
                 <p>Nyama est votre plateforme vous permettant de trouver des restaurants plus proches de vous et passer des commandes</p>
             </div>
             <div class="row px-4">
-                <button class="btn btn-eat py-2 my-1 col-md-5 mx-md-2">
+                <router-link to="/restaurants" class="btn btn-eat py-2 my-1 col-md-5 mx-md-2">
                     <i class="fa-brands fa-angellist"></i>
-                    Catalogue restaurant
-                </button>
-                <Multiselect class="col-md" v-model="value"
+                    Catalogue restaurants
+                </router-link>
+                <router-link to="/supermarche" class="btn btn-eat py-2 my-1 col-md-5 mx-md-2">
+                    <i class="fa-brands fa-angellist"></i>
+                    Supermarchés
+                </router-link>
+                <!-- <Multiselect class="col-md" v-model="value"
                     :options="options" :custom-label="value"
-                    placeholder="Select one" label=""></Multiselect>
+                    placeholder="Select one" label=""></Multiselect> -->
             </div>
         </div>
     </div>

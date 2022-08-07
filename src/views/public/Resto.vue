@@ -91,13 +91,38 @@
       <menu :review="menu"/>
     </div> -->
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-      <div class="offcanvas-header">
+      <div class="offcanvas-header border-bottom mx-2">
         <h5 class="menu-title" id="offcanvasRightLabel">Votre Panier</h5>
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close">
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close">
         </button>
       </div>
-      <div class="offcanvas-body">
-        ...
+      <div class="offcanvas-body d-flex flex-column justify-content-between h-100">
+        <div class="cart">
+          <div class="cart-article d-flex py-3" v-for="index in 6" :key="index">
+            <div class="img-article w-25">
+              <img class="w-100 rounded" src="../../assets/nyama_image/jakub-kapusnak-4f4YZfDMLeU-unsplash.jpg" alt="">
+            </div>
+            <div class="info-article text-start">
+              <h4 class="name-article">Pizza au janbon</h4>
+              <span class="price-article">650fcfa</span>
+              <div class="qty-article d-flex">
+                <button class="btn" @click.prevent="decrementQty()">-</button>
+                <label for="" class="form-control">{{ qty }}</label>
+                <button class="btn" @click.prevent="incrementQty()">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <h5 class="d-flex justify-content-between py-2">
+              <span>Total</span>
+              <span>2600fcfa</span>
+          </h5>
+          <div class="row">
+            <router-link to="/checkout" class="btn btn-success col-6">Checkout</router-link>
+            <button class="btn btn-info-cart col">Voir Panier</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -129,6 +154,7 @@ export default {
   },
   data: function () {
     return {
+      qty: 1,
       resto_id1 : [{
           id: 1,
             title: "Le Petit Monde des Chapardeurs",
@@ -210,6 +236,12 @@ export default {
 
       // CONSTANT MUTATION
       this.$store.commit(SET_NOTE, newNote);
+    },
+    incrementQty(){
+      this.qty++;
+    },
+    decrementQty(){
+      this.qty--;
     }
   }
 }
@@ -317,6 +349,21 @@ export default {
       background-repeat: no-repeat;
     }
 
+    .cart{
+      max-height: 80%;
+      height: 100%;
+      overflow: hidden;
+      overflow-y: scroll;
+    }
+
+    .cart::-webkit-scrollbar {
+        width: 8px;               /* width of the entire scrollbar */
+      }
+
+      .cart::-webkit-scrollbar-thumb {
+        background-color: #e6571ef1;    /* color of the scroll thumb */
+      }
+
     .menu-cart{
       width: 2rem;
       height: 2rem;
@@ -332,8 +379,30 @@ export default {
       text-align: left;
     }
 
+    .btn-info-cart{
+      background: #e6571ef1 !important;
+      color: #fff;
+      margin-left: 8px;
+    }
+
     .menu-prix{
       font-family: 'Fraunces', serif;
+    }
+
+    .cart-article{
+      gap: .5rem;
+      border-bottom: 1px dashed #aaa;
+    }
+    .name-article{
+      font-size: 1rem;
+    }
+
+    .img-article{
+      width: 35% !important;
+    }
+
+    .qty-article{
+      max-width: 100px;
     }
 
 @media screen and (min-width: 760px) {
@@ -344,5 +413,7 @@ export default {
     max-width: 400px;
     padding-bottom: 44% !important;
   }
+
+
 }
 </style>

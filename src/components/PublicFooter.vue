@@ -66,16 +66,16 @@
                 style="width: 60px; background-color: #7c4dff; height: 2px"
                 />
             <p>
-              <a href="#!" class="text-white">Restaurants</a>
+              <a class="text-white">Restaurants</a>
             </p>
             <p>
-              <a href="#!" class="text-white">Supermarche</a>
+              <a class="text-white">Supermarche</a>
             </p>
             <p>
-              <a href="#!" class="text-white">Contact</a>
+              <a class="text-white">Contact</a>
             </p>
             <p>
-              <a href="#!" class="text-white">Apropos</a>
+              <a class="text-white">Apropos</a>
             </p>
           </div>
           <!-- Grid column -->
@@ -89,16 +89,16 @@
                 style="width: 60px; background-color: #7c4dff; height: 2px"
                 />
             <p>
-              <a href="#!" class="text-white">Connectez-vous</a>
+              <a class="text-white">Connectez-vous</a>
             </p>
             <p>
-              <a href="#!" class="text-white">devenir Partenaire</a>
+              <a class="text-white">devenir Partenaire</a>
             </p>
             <p>
-              <a href="#!" class="text-white">Frais de livraison</a>
+              <a class="text-white">Frais de livraison</a>
             </p>
             <p>
-              <a href="#!" class="text-white">FAQ</a>
+              <a class="text-white">FAQ</a>
             </p>
           </div>
           <!-- Grid column -->

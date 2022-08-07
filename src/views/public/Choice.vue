@@ -16,20 +16,23 @@
             </div>
         </div> -->
 
-        <div class="resto_content d-flex align-items-center">
+        <div class="resto_content d-md-flex align-items-center my-4 my-md-0">
             <div class="resto_content-text">
-                <p class="text-name">Nyama Delivery</p>
-                <h1><strong>recherchez vos restaurants</strong> 
+                <p class="text-name d-none d-md-block">Nyama Delivery</p>
+                <h1 class="text-center text-md-start"><strong>recherchez vos restaurants</strong> 
                 et commandez vos plats en ligne.</h1>
-                <p class="text-p">
+                <p class="text-p text-center text-md-start">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis gravida nibh vitae amet venenatis nulla. Habitant id scelerisque justo, varius proin etiam. Vel commodo commodo risus dui, vel, diam, eu fames turpis. Vitae posuere non nulla viverra. Blandit consequat nunc gravida egestas.
                 </p>
-                <div class="d-flex">
-                    <button class="btn btn_resto py-3 px-2">Restaurants</button>
-                    <button class="btn btn_contact py-3 px-2">Contacter Nous</button>
+                <div class="resto_content-img d-block d-md-none">
+                    <img src="../../assets/nyama_image/delivery-concept.jpg" alt="" />
+                </div>
+                <div class="row my-2 my-md-0 justify-content-center justify-content-md-start mx-2">
+                    <router-link to="/restaurants" class="col col-md-3  btn btn_resto py-3 px-2">Restaurants</router-link>
+                    <button class="col-8 col-md-4 btn btn_contact py-3 px-2">Contacter Nous</button>
                 </div>
             </div>
-            <div class="resto_content-img">
+            <div class="resto_content-img d-none d-md-block">
                 <img src="../../assets/nyama_image/delivery-concept.jpg" alt="" />
             </div>
         </div>
@@ -41,6 +44,9 @@ export default {
 }
 </script>
 <style scoped>
+    /* .resto_content{
+        flex-direction: column-reverse;
+    } */
     .resto_content-img{
         max-width: 710px;
         max-height: 820px;
@@ -62,27 +68,24 @@ export default {
         color: #e6571ef1;
     }
     .resto_content-text h1{
-        width: 630px;
+        width: 100%;
         font-style: normal;
-        font-weight: 800;
-        font-size: 48px;
+        font-weight: 700;
+        font-size: 28px;
         line-height: 100%;
-        /* or 48px */
         letter-spacing: -0.03em;
     }
     .resto_content-text .text-p{
-        width: 522px;
         font-family: 'Inter';
         font-style: normal;
         font-weight: 400;
         font-size: 16px;
         line-height: 22px;
-        /* or 138% */
         letter-spacing: -0.03em;
         color: #021339;
     }
-    .resto_content-text .d-flex{
-        gap: 1rem;
+    .resto_content-text .row{
+        gap: .6rem;
     }
    .btn_contact , .btn_resto{
         display: flex;
@@ -153,6 +156,14 @@ export default {
         .flex{
             display: flex;
             margin: 0 2rem;
+        }
+        .resto_content-text h1{
+            width: 630px;
+            font-weight: 800;
+            font-size: 48px;
+        }
+        .resto_content-text .text-p{
+            width: 522px;
         }
     }
 </style>

@@ -1,35 +1,60 @@
 <template lang="">
     <div class="">
         <HeaderResto />
-        <div class="form-group my-3 w-50 m-auto d-flex justify-content-center">
-          <input type="text" v-model="SearchKey"
-            class="form-control" name="" id=""  placeholder="recherchez un restaurant">
-        </div>
-        <div class="py-4">
-            <div class="container px-0 d-flex">
-                <h1>restaurants liste</h1>
+        <div class="row m-0 py-2">
+            <div class="col py-4">
+                <h5>Trier Par</h5>
+                <ul>
+                    <button class="btn">
+                        <i class="fa-solid fa-circle-dot"></i><span class="text-secondary mx-1">Restaurant Pizza</span>
+                    </button>
+                    <li>
+                        <i class="fa-solid fa-circle-dot"></i><span class="text-secondary mx-1">Restaurant traditionnels</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-dot"></i><span class="text-secondary mx-1">Restaurant Senegalais</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-dot"></i><span class="text-secondary mx-1">Pizza</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-dot"></i><span class="text-secondary mx-1">Pizza</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-circle-dot"></i><span class="text-secondary mx-1">Pizza</span>
+                    </li>
+                </ul>
             </div>
-            <div class="restos row justify-content-center m-0">
-                <router-link :to="{name: 'resto', params : { id : resto.id}}" class="card px-0 col-4 col-md-6" style="width: 18rem;"
-                v-for="(resto, idx) in restos" :key="idx">
-                    <img :src="'' + resto.image + '/'" alt="" class="card-img-top"/>
-                        <div class="card-body">
-                        <p class="resto__title">{{resto.title}}</p>
-                        <!-- <div class="resto__note">
-                            <span v-for="i in 5" :key="i" :class="{'resto__star': true, 'resto__star--dark' : i > resto.note}">⭐</span>
-                        </div> -->
-                        <div class="d-flex justify-content-between
-                            slide-text my-2">
-                                <ul class="d-flex resto__note">
-                                    <li v-for="i in 5" :key="i" :class="{'resto__star': true, 'resto__star--dark' : i > resto.note}">
-                                        <i class="fa-solid fa-star"></i>
-                                    </li>
-                                </ul>
-                            <span class="text-secondary">4.5/(473)</span>
-                        </div>
-                        <button class="btn button w-100">Entrez</button>
+            <div class="col-10 py-4">
+                <div class="container px-5 d-flex justify-content-between align-items-center">
+                    <h2>Liste des Restaurants</h2>
+                    <div class="form-group my-3 w-25 d-flex justify-content-center">
+                        <input type="text" v-model="SearchKey"
+                        class="form-control" name="" id=""  placeholder="recherchez un restaurant">
                     </div>
-                </router-link>
+                </div>
+                <div class="restos row justify-content-center m-0">
+                    <router-link :to="{name: 'resto', params : { id : resto.id}}" class="card d-flex justify-content-between px-0 col-4 col-md-6" style="width: 18rem;"
+                    v-for="(resto, idx) in restos" :key="idx">
+                        <img :src="'' + resto.image + '/'" alt="" class="card-img-top img-resto"/>
+                            <div class="card-body">
+                            <p class="resto__title">{{resto.title}}</p>
+                            <!-- <div class="resto__note">
+                                <span v-for="i in 5" :key="i" :class="{'resto__star': true, 'resto__star--dark' : i > resto.note}">⭐</span>
+                            </div> -->
+                            <div class="d-flex justify-content-between
+                                slide-text my-2">
+                                    <ul class="d-flex resto__note">
+                                        <li v-for="i in 5" :key="i" :class="{'resto__star': true, 'resto__star--dark' : i > resto.note}">
+                                            <i class="fa-solid fa-star"></i>
+                                        </li>
+                                    </ul>
+                                <span class="text-secondary">4.5/(473)</span>
+                            </div>
+                            <button class="btn button w-100">Entrez</button>
+                        </div>
+                    </router-link>
+                </div>
             </div>
         </div>
     </div>
@@ -70,6 +95,9 @@ export default {
     .restos{
         gap: 1rem;
     }
+    .restos .card-body{
+        flex: none !important;
+    }
     .content_card{
         gap: .7rem;
     }
@@ -104,5 +132,7 @@ export default {
     }
     .button:hover{
         color: #fff;
+    }
+    .img-resto{
     }
 </style>
