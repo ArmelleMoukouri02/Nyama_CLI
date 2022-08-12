@@ -14,10 +14,10 @@
             <div class="public_nav-transitio d-none d-md-flex">
                 <ul class="public_nav-link">
                     <li>
-                        <router-link exact tag="li" active-class="active" to="/">Accueil</router-link>
+                        <router-link exact tag="li" active-class="active" to="/" @click="OpenNav = !OpenNav">Accueil</router-link>
                     </li>
                     <li>
-                        <router-link exact tag="li" active-class="active" to="/restaurants">Restaurants</router-link>
+                        <router-link exact tag="li" active-class="active" to="/restaurants" @click="OpenNav = !OpenNav">Restaurants</router-link>
                     </li>
                     
                 </ul>
@@ -27,8 +27,8 @@
                     </li>
                     <transition>
                         <div class="dropdown_connect" v-if="show">
-                            <router-link to="/login" class="btn connect-btn">Connexion <i class="fa-solid fa-user-check mx-3"></i></router-link><br />
-                            <router-link to="/register" class="btn connect-btn">Inscription <i class="fa-solid fa-user-check mx-3"></i></router-link>
+                            <router-link to="/login" class="btn connect-btn" @click="OpenNav = !OpenNav">Connexion <i class="fa-solid fa-user-check mx-3"></i></router-link><br />
+                            <router-link to="/register" class="btn connect-btn" @click="OpenNav = !OpenNav">Inscription <i class="fa-solid fa-user-check mx-3"></i></router-link>
                         </div>
                     </transition>
                 </ul>
@@ -36,10 +36,10 @@
             <div class="public_nav-transitio d-md-none" v-if="OpenNav">
                 <ul class="public_nav-link">
                     <li class="my-2">
-                        <router-link to="/">Accueil</router-link>
+                        <router-link to="/" @click="OpenNav = !OpenNav">Accueil</router-link>
                     </li>
                     <li class="my-2">
-                        <router-link to="/restaurants">Restaurants</router-link>
+                        <router-link to="/restaurants" @click="OpenNav = !OpenNav">Restaurants</router-link>
                     </li>
                     <li class="my-2">
                         <router-link to="/apropos">Apropos</router-link>
@@ -51,8 +51,8 @@
                     </li>
                     <transition>
                         <div class="dropdown_connect" v-if="show">
-                            <router-link to="/login" class="btn connect-btn">Connexion <i class="fa-solid fa-user-check mx-3"></i></router-link><br />
-                            <router-link to="/register" class="btn connect-btn">Inscription <i class="fa-solid fa-user-check mx-3"></i></router-link>
+                            <router-link to="/login" class="btn connect-btn" @click="OpenNav = !OpenNav">Connexion <i class="fa-solid fa-user-check mx-3"></i></router-link><br />
+                            <router-link to="/register" class="btn connect-btn" @click="OpenNav = !OpenNav">Inscription <i class="fa-solid fa-user-check mx-3"></i></router-link>
                         </div>
                     </transition>
                 </ul>
