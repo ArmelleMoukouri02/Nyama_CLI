@@ -19,12 +19,7 @@
                     <li>
                         <router-link exact tag="li" active-class="active" to="/restaurants">Restaurants</router-link>
                     </li>
-                    <li>
-                        <router-link exact active-class="active" to="/nourritures">Supermarchés</router-link>
-                    </li>
-                    <li>
-                        <router-link active-class="active" exact to="/apropos">Apropos</router-link>
-                    </li>
+                    
                 </ul>
                 <ul class="public_nav-search mx-3">
                     <li>
@@ -45,9 +40,6 @@
                     </li>
                     <li class="my-2">
                         <router-link to="/restaurants">Restaurants</router-link>
-                    </li>
-                    <li class="my-2">
-                        <router-link to="/nourriture">Supermarchés</router-link>
                     </li>
                     <li class="my-2">
                         <router-link to="/apropos">Apropos</router-link>
