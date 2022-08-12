@@ -14,58 +14,15 @@
                         </div>
                         <span>Payment</span>
                     </div><br />
-                    <div class="pb-5 border-bottom d-none">
-                        <h5 class="mod-title py-3">Compte detail</h5>
-                        <div class="py-3">
-                            <div class="form_content">
-                                <label>Email address</label>
-                                <div class="form-input d-flex align-items-center px-3">
-                                    <input type="email" placeholder="Exemple@gmail.com"/>
-                                    <i class="fa-solid fa-circle-check mx-1"></i>
-                                </div>
-                            </div>
-                            <div class="form_content my-3">
-                                <label>telephone</label>
-                                <div class="form-input d-flex align-items-center px-3">
-                                    <input type="text" placeholder="facultatif"/>
-                                    <i class="fa-solid fa-circle-check mx-1"></i>
-                                </div>
-                            </div>
-                            <div class="text-end py-3">
-                                <button class="btn mx-2">Creer un compte</button>
-                                <button class="btn btn-login-checkout py-3">Poursuivre</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="d-n">
-                        <div class="pb-5 border-bottom">
-                            <h5 class="mod-title py-3">Shipping detail</h5>
-                        </div>
-                        <div class="py-3">
-                            <div class="form_content">
-                                <div class="border py-2 rounded content_shipping px-3">
-                                    <div class="d-flex justify-content-between align-items-center w-100 border-bottom">
-                                        <li class="">
-                                            <span class="text-secondary">Contact</span>
-                                            <span class="mx-3">david@gmail.com</span>
-                                        </li>
-                                        <button class="btn btn-update">Modifier</button>
-                                    </div>
-                                    <Multiselect class="col-md py-3 bg-transparent my-2" v-model="value"
-                                        :options="options" :custom-label="value"
-                                        placeholder="Addresse de livraison" label=""></Multiselect>
-                                        
-                                    <div class="d-flex justify-content-between align-items-center px-3 border w-100 my-2 rounded py-3">
-                                        <span><i class="fa-solid fa-circle-dot"></i><span class="text-secondary mx-1">Frais livraisons</span></span>
-                                        <h6>500fcfa</h6>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+             
+                    <component :is="steps[step]" 
+                    :fromValue="values"></component>
+
                     <div class="text-end py-3">
-                        <button class="btn mx-2">Annuler</button>
-                        <button class="btn btn-login-checkout py-3">Shipping details</button>
+                        <button class="btn mx-2" 
+                        @click.prevent="previousStep">Precedant</button>
+                        <button class="btn btn-login-checkout py-3" 
+                        @click.prevent="nextStep">Shipping details</button>
                     </div>
                 </div>
             </div>
@@ -117,15 +74,36 @@
         </div>
     </div>
 </template>
-<script>
-import Multiselect from '@vueform/multiselect'
-export default {
-    components:{
-        Multiselect,
-    },
-}
+<script setup>
+    import Multiselect from '@vueform/multiselect'
+    import CompteStep from '@/views/public/partials/CompteStep.vue'
+    import ShippingStep from '@/views/public/partials/ShippingStep.vue'
+    import PaymentStep from '@/views/public/partials/PaymentStep.vue'
+    import useForm from '../../composables/formValue';
+    import { ref } from '@vue/reactivity'
+
+    //variable reactive
+    const step = ref(0);
+
+    const steps = [
+        CompteStep,
+        ShippingStep,
+        PaymentStep,
+    ];
+
+    const {
+        values
+    } = useForm();
+
+    const previousStep = () => {
+        step.value--;
+    };
+
+    const nextStep = () => {
+        step.value++;
+    }
 </script>
-<style scoped>
+<style css>
 .checkout {
     padding: 6rem 0;
     gap: 12px;

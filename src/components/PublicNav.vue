@@ -32,8 +32,8 @@
                     </li>
                     <transition>
                         <div class="dropdown_connect" v-if="show">
-                            <button class="btn connect-btn">Connexion <i class="fa-solid fa-user-check mx-3"></i></button><br />
-                            <button class="btn connect-btn">Inscription <i class="fa-solid fa-user-check mx-3"></i></button>
+                            <router-link to="/login" class="btn connect-btn">Connexion <i class="fa-solid fa-user-check mx-3"></i></router-link><br />
+                            <router-link to="/register" class="btn connect-btn">Inscription <i class="fa-solid fa-user-check mx-3"></i></router-link>
                         </div>
                     </transition>
                 </ul>
@@ -47,7 +47,7 @@
                         <router-link to="/restaurants">Restaurants</router-link>
                     </li>
                     <li class="my-2">
-                        <router-link to="/nourriture">Nourritures</router-link>
+                        <router-link to="/nourriture">Supermarchés</router-link>
                     </li>
                     <li class="my-2">
                         <router-link to="/apropos">Apropos</router-link>
@@ -59,13 +59,14 @@
                     </li>
                     <transition>
                         <div class="dropdown_connect" v-if="show">
-                            <button class="btn connect-btn">Connexion <i class="fa-solid fa-user-check mx-3"></i></button><br />
-                            <button class="btn connect-btn">Inscription <i class="fa-solid fa-user-check mx-3"></i></button>
+                            <router-link to="/login" class="btn connect-btn">Connexion <i class="fa-solid fa-user-check mx-3"></i></router-link><br />
+                            <router-link to="/register" class="btn connect-btn">Inscription <i class="fa-solid fa-user-check mx-3"></i></router-link>
                         </div>
                     </transition>
                 </ul>
             </div>
         </nav>
+
     </div>
 </template>
 <script>
