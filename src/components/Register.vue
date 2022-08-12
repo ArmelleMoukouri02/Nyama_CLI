@@ -14,35 +14,30 @@
 					</span>
 
                     <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="nmae" v-model="user.name">
+						<input class="input100" type="text" name="nmae" v-model="user.name" placeholder="name">
 						<span class="focus-input100"></span>
-						<span class="label-input100">Name</span>
 					</div>
 
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="email" v-model="user.email">
+						<input class="input100" type="text" name="email" v-model="user.email" placeholder="email">
 						<span class="focus-input100"></span>
-						<span class="label-input100">Email</span>
 					</div>
 
                     <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" type="text" name="telephone" v-model="user.telephone">
+						<input class="input100" type="text" name="telephone" v-model="user.telephone" placeholder="telephone">
 						<span class="focus-input100"></span>
-						<span class="label-input100">Telephone</span>
 					</div>
 					
 					
 					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="pass" v-model="user.password">
+						<input class="input100" type="password" name="pass" v-model="user.password" placeholder="mot de passe">
 						<span class="focus-input100"></span>
-						<span class="label-input100">Password</span>
 					</div>
 
                     <div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="c_password" v-model="user.c_password">
+						<input class="input100" type="password" name="c_password" v-model="user.c_password" placeholder="Confirme mot de passe">
 						<span class="focus-input100"></span>
-						<span class="label-input100">Confirme Password</span>
 					</div>
 
 					<div class="flex-sb-m w-full p-t-3 p-b-32">
@@ -78,7 +73,7 @@
 					</div>
 				</form>
 
-				<div class="login100-more" style="background-image: url('images/bg-01.jpg');">
+				<div class="login100-more">
 				</div>
 			</div>
 		</div>
@@ -105,7 +100,7 @@ export default {
             accountService.register(this.user)
             .then(res => {
                 console.log(res.data);
-                this.$router.push('/login')
+                this.$router.push('/dashboard')
             })
             .catch(err => console.log(err))
         }
@@ -115,3 +110,13 @@ export default {
 
 <style src="./css/main.css"></style>
 <style src="./css/util.css"></style>
+
+<style css>
+    .login100-more{
+        background-image:linear-gradient(to bottom, rgba(63, 63, 63, 0.52), rgba(71, 57, 54, 0.623)),
+         url('@/assets/nyama_image/instagram2.webp');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+</style>
