@@ -15,8 +15,8 @@ const getResto = (uid) => {
     return Axios.get('/restaurants/'+uid)
 }
 
-const deleteResto = (id) => {
-    return Axios.delete('/restaurants/'+id)
+const deleteResto = (uid) => {
+    return Axios.delete('/restaurants/'+uid)
 }
 
 export const restaurantService = {

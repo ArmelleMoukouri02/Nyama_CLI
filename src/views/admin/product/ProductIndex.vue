@@ -38,21 +38,34 @@
                                     </tfoot>
                                     <tbody>
                                        
-                                        <tr class="border-bottom" v-for="(product, idx) in products" ::key="idx">
+                                        <tr class="border-bottom" v-for="(product, idx) in products" :key="product.id">
                                             <td></td>
                                             <td>{{ product.name }}</td>
                                             <td>{{ product.description }}</td>
                                             <td>{{ product.price }}</td>
                                             <td>{{ product.created_at }}</td>
                                             <td class="d-flex">
-                                                <button class="btn"  @click="del(idx)"><i class="fa-solid fa-trash-can text-danger"></i></button>
+                                                <button class="btn"   @click="del(idx)"><i class="fa-solid fa-trash-can text-danger"></i></button>
                                                 <router-link to="/productAdd" class="btn button"><i class="fa-solid fa-pen"></i></router-link>
                                             </td>
                                         </tr>
                                     </tbody>
             </table>
         </div>
-                 
+               <Transition name="bounce">
+            <div class="form-add d-flex justify-content-center position-absolute top-0 left-0 right-0 z-12 
+            zindex-modal w-100 overlay align-items-center p-4" v-if="deleteM">
+            <button class="btn position-absolute right-0 top-0 bg-white m-2" 
+            @click="deleteM = !deleteM">X</button>
+                <div class=" bg-white overlay-content text-center">
+                        <div class="form-group py-1">
+                            <p>Confirmer la suppression</p>
+                            <button class="btn btn-info mx-2">Annuler</button>
+                            <button class="btn btn-danger" >Confirmer</button>
+                        </div>
+                </div>
+            </div>
+        </Transition>  
     </div>
 </template>
 <script>
@@ -62,6 +75,7 @@ export default {
     data() {
         return {
             products: [],
+            deleteM: false,
             show: false,
         }
     },
@@ -69,7 +83,10 @@ export default {
     methods: {
         del(idx){
             console.log(idx);
-            this.products.splice(idx, 1);
+            productService.deleteProduct(this.products[idx].id)
+                .then(res => this.products.splice(idx, 1))
+                .catch(err => console.log(err))
+            // this.products.splice(idx, 1);
         }
     },
 
@@ -79,8 +96,9 @@ export default {
                 console.log("ici",res.data)
                 let products = [];
                 res.data.message.forEach(i => {
-                    console.log("i", i.name);
+                    console.log("i", i.id);
                     products.push({
+                        id: i.id,
                         name: i.name,
                         description: i.description,
                         created_at: i.created_at,

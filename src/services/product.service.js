@@ -12,11 +12,11 @@ const getAllprod = () => {
 }
 
 const getprod = (uid) => {
-    return Axios.get('/produits/'+uid)
+    return Axios.get('/produits/'+uid) 
 }
 
-const deleteProduct = (id) => {
-    return Axios.delete('/produits/'+id)
+const deleteProduct = (uid) => {
+    return Axios.delete('/produits/'+uid)
 }
 
 export const productService = {

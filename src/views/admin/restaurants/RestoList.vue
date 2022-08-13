@@ -38,14 +38,14 @@
                                     </tfoot>
                                     <tbody>
                                        
-                                        <tr class="border-bottom" v-for="(resto, idx) in search" ::key="idx">
+                                        <tr class="border-bottom" v-for="(resto, idx) in search" :key="resto.id">
                                             <td>{{ resto.image }}</td>
                                             <td>{{ resto.name }}</td>
                                             <td>{{ resto.menu }}</td>
                                             <td>{{resto.adresse}}</td>
                                             <td>{{ resto.created_at }}</td>
                                             <td class="d-flex">
-                                                <button class="btn" @click="deleteM = !deleteM"><i class="fa-solid fa-trash-can text-danger"></i></button>
+                                                <button class="btn" @click="del(idx)"><i class="fa-solid fa-trash-can text-danger"></i></button>
                                                 <button class="btn button"  @click="show = !show"><i class="fa-solid fa-pen"></i></button>
                                             </td>
                                         </tr>
@@ -82,6 +82,20 @@
                 </form>
             </div>
         </Transition>
+        <Transition name="bounce">
+            <div class="form-add d-flex justify-content-center position-absolute top-0 left-0 right-0 z-12 
+            zindex-modal w-100 overlay align-items-center p-4" v-if="deleteM">
+            <button class="btn position-absolute right-0 top-0 bg-white m-2" 
+            @click="deleteM = !deleteM">X</button>
+                <div class=" bg-white overlay-content text-center">
+                        <div class="form-group py-1">
+                            <p>Confirmer la suppression</p>
+                            <button class="btn btn-info mx-2">Annuler</button>
+                            <button class="btn btn-danger" >Confirmer</button>
+                        </div>
+                </div>
+            </div>
+        </Transition>
     </div>
 </template>
 <script>
@@ -91,6 +105,7 @@ export default {
         return{
             restos: [],
             SearchR: "",
+            deleteM: false,
             show: false,
 
             restau: {
@@ -105,6 +120,13 @@ export default {
             restaurantService.createResto(this.restau)
                 .then(res => console.log(res.data))
                 .catch(err => console.log(err))
+        },
+        del(idx){
+            console.log(idx);
+            restaurantService.deleteResto(this.restos[idx].id)
+                .then(res => this.restos.splice(idx, 1))
+                .catch(err => console.log(err))
+            // this.products.splice(idx, 1);
         }
     },
     mounted() {
