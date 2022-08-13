@@ -26,7 +26,10 @@
                 </li>
             </ul>
         </nav>
-                <router-view />
+        <div class="pt-4 px-4">
+            <router-view />
+        </div>
+                
             </div>
             
         </div>

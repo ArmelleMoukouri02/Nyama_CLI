@@ -35,7 +35,7 @@
                                     </a>
                                     <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                         <nav class="sb-sidenav-menu-nested nav">
-                                            <router-link to="/user" class="nav-link">Users</router-link>
+                                            <router-link to="/users" class="nav-link">Users</router-link>
                                             <a class="nav-link" href="register.html">Inscription</a>
                                             <a class="nav-link" href="password.html">Mot de passe oublie</a>
                                         </nav>

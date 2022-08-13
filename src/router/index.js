@@ -20,6 +20,8 @@ import RestoList from '@/views/admin/restaurants/RestoList.vue';
 import CommandeIndex from '@/views/admin/commande/CommandeIndex.vue';
 import CommandeEdit from '@/views/admin/commande/CommandeEdit.vue';
 
+import UserIndex from '@/views/admin/users/UserIndex.vue';
+
 import Login from '@/components/Login.vue';
 import Register from '@/components/Register.vue';
 
@@ -49,6 +51,8 @@ const routes = [
 
       { path: '/commande', component: CommandeIndex },
       { path: '/commande/edit/:id', component: CommandeEdit, props: true },
+
+      { path: '/users', name: 'users', component: UserIndex }
 
     ]
   },
