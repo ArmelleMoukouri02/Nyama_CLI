@@ -43,9 +43,9 @@
                                             <td>{{ user.name }}</td>
                                             <td>{{ user.email }}</td>
                                             <td>678907865</td>
-                                            <td>2009/01/12</td>
+                                            <td>{{user.created_at}}</td>
                                             <td class="d-flex">
-                                                <button class="btn" ><i class="fa-solid fa-trash-can text-danger"></i></button>
+                                                <button class="btn" @click="deleteM = !deleteM"><i class="fa-solid fa-trash-can text-danger"></i></button>
                                                 <button class="btn button"  @click="show = !show"><i class="fa-solid fa-pen"></i></button>
                                             </td>
                                         </tr>
@@ -77,6 +77,21 @@
                 </div>
             </div>
         </Transition>
+
+        <Transition name="bounce">
+            <div class="form-add d-flex justify-content-center position-absolute top-0 left-0 right-0 z-12 
+            zindex-modal w-100 overlay align-items-center p-4" v-if="deleteM">
+            <button class="btn position-absolute right-0 top-0 bg-white m-2" 
+            @click="deleteM = !deleteM">X</button>
+                <div class=" bg-white overlay-content text-center">
+                        <div class="form-group py-1">
+                            <p>Confirmer la suppression</p>
+                            <button class="btn btn-info mx-2">Annuler</button>
+                            <button class="btn btn-danger">Confirmer</button>
+                        </div>
+                </div>
+            </div>
+        </Transition>
     </div>
 </template>
 <script>
@@ -87,6 +102,7 @@ export default {
     data(){
         return{
             show: false,
+            deleteM: false,
             users: [],
             SearchK: "",
         }
@@ -109,7 +125,9 @@ export default {
                 console.log("nouveau tab", this.users);
                 console.log(this.users, 'ioo');
             })
-            .catch(err => console.log(err))
+            .catch(err => console.log(err));
+
+
     },
     computed: {
         search(){
@@ -117,7 +135,7 @@ export default {
             if(this.SearchK === ""){
                     console.log("ici search", this.users);
                     return this.users;
-                }
+            }
                 return this.users.filter((user) => {
                     console.log(user.name);
                     return user.name.toLowerCase().includes(query)

@@ -11,7 +11,12 @@ const getUser = (uid) => {
     return Axios.get('/users/'+uid)
 }
 
+const deleteUser = () => {
+    return Axios.delete('/users/'+id)
+}
+
 export const userService = {
     getAllUsers,
-    getUser
+    getUser,
+    deleteUser
 }
