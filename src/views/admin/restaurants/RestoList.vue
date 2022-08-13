@@ -57,24 +57,29 @@
             zindex-modal w-100 overlay align-items-center p-4" v-if="show">
             <button class="btn position-absolute right-0 top-0 bg-white m-2" 
             @click="show = !show">X</button>
-                <div class=" bg-white overlay-content">
+                <form class=" bg-white overlay-content" @submit.prevent="ajoutResto">
                     <h3>Nouveau Restaurant</h3>
                     <div>
                         <div class="form-group py-1">
                             <label for="exampleInputEmail1">Nom</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" >
+                            <input type="text" class="form-control" 
+                            v-model="restau.name">
                         </div>
                         <div class="form-group py-2">
                             <label for="exampleInputPassword1">adresse</label>
-                            <input type="text" class="form-control" >
+                            <input type="text" class="form-control" v-model="restau.adresse">
                         </div>
                         <div class="form-group py-2">
                             <label for="exampleInputPassword1">Menu propose</label>
+                            <input type="text" class="form-control" v-model="restau.menu">
+                        </div>
+                        <div class="form-group py-2">
+                            <label for="exampleInputPassword1">Note</label>
                             <input type="text" class="form-control">
                         </div>
                         <button type="submit" class="btn button w-100">Enregister</button>
                     </div>
-                </div>
+                </form>
             </div>
         </Transition>
     </div>
@@ -87,6 +92,19 @@ export default {
             restos: [],
             SearchR: "",
             show: false,
+
+            restau: {
+                name: "",
+                menu: "",
+                adresse: "",
+            }
+        }
+    },
+    methods:{
+        ajoutResto(){
+            restaurantService.createResto(this.restau)
+                .then(res => console.log(res.data))
+                .catch(err => console.log(err))
         }
     },
     mounted() {

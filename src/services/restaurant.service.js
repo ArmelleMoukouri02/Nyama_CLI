@@ -3,7 +3,9 @@
 
 import Axios from './caller.service'
 
-
+let createResto = (restaurant) => {
+    return Axios.post('/restaurants', restaurant)
+}
 
 const getAllresto = () => {
     return Axios.get('/restaurants')
@@ -20,5 +22,6 @@ const deleteResto = (id) => {
 export const restaurantService = {
     getAllresto,
     getResto,
-    deleteResto
+    deleteResto,
+    createResto
 }
