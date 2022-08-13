@@ -45,8 +45,8 @@
                                             <td>{{ product.price }}</td>
                                             <td>{{ product.created_at }}</td>
                                             <td class="d-flex">
-                                                <button class="btn" @click="deleteM = !deleteM"><i class="fa-solid fa-trash-can text-danger"></i></button>
-                                                <router-link to="/productAdd" class="btn button" ><i class="fa-solid fa-pen"></i></router-link>
+                                                <button class="btn"  @click="del(idx)"><i class="fa-solid fa-trash-can text-danger"></i></button>
+                                                <router-link to="/productAdd" class="btn button"><i class="fa-solid fa-pen"></i></router-link>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -63,6 +63,13 @@ export default {
         return {
             products: [],
             show: false,
+        }
+    },
+
+    methods: {
+        del(idx){
+            console.log(idx);
+            this.products.splice(idx, 1);
         }
     },
 
