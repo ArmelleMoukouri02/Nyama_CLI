@@ -11,7 +11,7 @@
                             slide-text my-2">
         <ul class="d-flex resto__note">
             <li v-for="i in 5" :key="i" :class="{'resto__star': true, 'resto__star--dark' : i > resto.note}"
-                                      @click="updateNote(i)">
+                @click="updateNote(i)">
                 <i class="fa-solid fa-star"></i>
             </li>
         </ul>

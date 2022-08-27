@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+import Vuex from 'vuex';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
@@ -12,4 +13,4 @@ import "bootstrap"
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
-createApp(App).use(store).use(router).mount('#app')
+createApp(App).use(store).use(router).use(Vuex).mount('#app')

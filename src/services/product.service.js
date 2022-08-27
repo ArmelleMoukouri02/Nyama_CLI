@@ -3,8 +3,8 @@
 
 import Axios from './caller.service'
 
-let createProduct = (restaurant) => {
-    return Axios.post('/produits', restaurant)
+let createProduct = (product) => {
+    return Axios.post('/produits', product)
 }
 
 const getAllprod = () => {
